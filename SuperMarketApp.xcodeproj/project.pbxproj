@@ -14,6 +14,9 @@
 		69B86BA21FE1DDD400FD3ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */; };
 		69B86BA51FE1DDD400FD3ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B86BA31FE1DDD400FD3ABB /* LaunchScreen.storyboard */; };
 		69B86BA81FE1DDD500FD3ABB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BA71FE1DDD500FD3ABB /* main.m */; };
+		69B86BB01FE1E1E200FD3ABB /* AddNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BAF1FE1E1E200FD3ABB /* AddNewItemViewController.m */; };
+		69B86BB31FE1E44300FD3ABB /* TodoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */; };
+		69B86BB61FE1E48F00FD3ABB /* ToDoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BB51FE1E48F00FD3ABB /* ToDoListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,12 @@
 		69B86BA41FE1DDD400FD3ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69B86BA61FE1DDD500FD3ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69B86BA71FE1DDD500FD3ABB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69B86BAE1FE1E1E200FD3ABB /* AddNewItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNewItemViewController.h; sourceTree = "<group>"; };
+		69B86BAF1FE1E1E200FD3ABB /* AddNewItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNewItemViewController.m; sourceTree = "<group>"; };
+		69B86BB11FE1E44300FD3ABB /* TodoListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoListTableViewController.h; sourceTree = "<group>"; };
+		69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoListTableViewController.m; sourceTree = "<group>"; };
+		69B86BB41FE1E48F00FD3ABB /* ToDoListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoListTableViewCell.h; sourceTree = "<group>"; };
+		69B86BB51FE1E48F00FD3ABB /* ToDoListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,8 @@
 			children = (
 				69B86B951FE1DDD400FD3ABB /* AppDelegate.h */,
 				69B86B961FE1DDD400FD3ABB /* AppDelegate.m */,
+				69B86BAE1FE1E1E200FD3ABB /* AddNewItemViewController.h */,
+				69B86BAF1FE1E1E200FD3ABB /* AddNewItemViewController.m */,
 				69B86B981FE1DDD400FD3ABB /* ViewController.h */,
 				69B86B991FE1DDD400FD3ABB /* ViewController.m */,
 				69B86B9B1FE1DDD400FD3ABB /* Main.storyboard */,
@@ -70,6 +81,10 @@
 				69B86BA61FE1DDD500FD3ABB /* Info.plist */,
 				69B86BA71FE1DDD500FD3ABB /* main.m */,
 				69B86B9E1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld */,
+				69B86BB11FE1E44300FD3ABB /* TodoListTableViewController.h */,
+				69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */,
+				69B86BB41FE1E48F00FD3ABB /* ToDoListTableViewCell.h */,
+				69B86BB51FE1E48F00FD3ABB /* ToDoListTableViewCell.m */,
 			);
 			path = SuperMarketApp;
 			sourceTree = "<group>";
@@ -148,6 +163,9 @@
 				69B86BA01FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld in Sources */,
 				69B86B9A1FE1DDD400FD3ABB /* ViewController.m in Sources */,
 				69B86BA81FE1DDD500FD3ABB /* main.m in Sources */,
+				69B86BB61FE1E48F00FD3ABB /* ToDoListTableViewCell.m in Sources */,
+				69B86BB31FE1E44300FD3ABB /* TodoListTableViewController.m in Sources */,
+				69B86BB01FE1E1E200FD3ABB /* AddNewItemViewController.m in Sources */,
 				69B86B971FE1DDD400FD3ABB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

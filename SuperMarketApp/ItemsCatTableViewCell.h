@@ -1,5 +1,5 @@
 //
-//  ToDoListTableViewCell.h
+//  ItemsCatTableViewCell.h
 //  SuperMarketApp
 //
 //  Created by Andres Gonzalez on 12/13/17.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToDoListTableViewCell : UITableViewCell
+@interface ItemsCatTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *txtName;
-@property (weak, nonatomic) IBOutlet UILabel *txtCount;
+@property (weak, nonatomic) IBOutlet UILabel *txtQuantity;
 
 @end

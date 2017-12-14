@@ -8,25 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		69B86B971FE1DDD400FD3ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86B961FE1DDD400FD3ABB /* AppDelegate.m */; };
-		69B86B9A1FE1DDD400FD3ABB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86B991FE1DDD400FD3ABB /* ViewController.m */; };
 		69B86B9D1FE1DDD400FD3ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B86B9B1FE1DDD400FD3ABB /* Main.storyboard */; };
-		69B86BA01FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B86B9E1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld */; };
 		69B86BA21FE1DDD400FD3ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */; };
 		69B86BA51FE1DDD400FD3ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B86BA31FE1DDD400FD3ABB /* LaunchScreen.storyboard */; };
 		69B86BA81FE1DDD500FD3ABB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BA71FE1DDD500FD3ABB /* main.m */; };
 		69B86BB01FE1E1E200FD3ABB /* AddNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BAF1FE1E1E200FD3ABB /* AddNewItemViewController.m */; };
 		69B86BB31FE1E44300FD3ABB /* TodoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */; };
 		69B86BB61FE1E48F00FD3ABB /* ToDoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BB51FE1E48F00FD3ABB /* ToDoListTableViewCell.m */; };
+		69B86BB91FE1F47300FD3ABB /* ItemsCatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BB81FE1F47300FD3ABB /* ItemsCatTableViewController.m */; };
+		69B86BBC1FE1F48900FD3ABB /* ItemsCatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BBB1FE1F48900FD3ABB /* ItemsCatTableViewCell.m */; };
+		69B86BBF1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B86BBD1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		69B86B921FE1DDD400FD3ABB /* SuperMarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperMarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B86B951FE1DDD400FD3ABB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69B86B961FE1DDD400FD3ABB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		69B86B981FE1DDD400FD3ABB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		69B86B991FE1DDD400FD3ABB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		69B86B9C1FE1DDD400FD3ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		69B86B9F1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMarketApp.xcdatamodel; sourceTree = "<group>"; };
 		69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69B86BA41FE1DDD400FD3ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69B86BA61FE1DDD500FD3ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +35,11 @@
 		69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoListTableViewController.m; sourceTree = "<group>"; };
 		69B86BB41FE1E48F00FD3ABB /* ToDoListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoListTableViewCell.h; sourceTree = "<group>"; };
 		69B86BB51FE1E48F00FD3ABB /* ToDoListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTableViewCell.m; sourceTree = "<group>"; };
+		69B86BB71FE1F47300FD3ABB /* ItemsCatTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsCatTableViewController.h; sourceTree = "<group>"; };
+		69B86BB81FE1F47300FD3ABB /* ItemsCatTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsCatTableViewController.m; sourceTree = "<group>"; };
+		69B86BBA1FE1F48900FD3ABB /* ItemsCatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsCatTableViewCell.h; sourceTree = "<group>"; };
+		69B86BBB1FE1F48900FD3ABB /* ItemsCatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsCatTableViewCell.m; sourceTree = "<group>"; };
+		69B86BBE1FE2082300FD3ABB /* SuperMarketApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMarketApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,18 +76,20 @@
 				69B86B961FE1DDD400FD3ABB /* AppDelegate.m */,
 				69B86BAE1FE1E1E200FD3ABB /* AddNewItemViewController.h */,
 				69B86BAF1FE1E1E200FD3ABB /* AddNewItemViewController.m */,
-				69B86B981FE1DDD400FD3ABB /* ViewController.h */,
-				69B86B991FE1DDD400FD3ABB /* ViewController.m */,
 				69B86B9B1FE1DDD400FD3ABB /* Main.storyboard */,
 				69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */,
 				69B86BA31FE1DDD400FD3ABB /* LaunchScreen.storyboard */,
 				69B86BA61FE1DDD500FD3ABB /* Info.plist */,
 				69B86BA71FE1DDD500FD3ABB /* main.m */,
-				69B86B9E1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld */,
+				69B86BBD1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld */,
 				69B86BB11FE1E44300FD3ABB /* TodoListTableViewController.h */,
 				69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */,
 				69B86BB41FE1E48F00FD3ABB /* ToDoListTableViewCell.h */,
 				69B86BB51FE1E48F00FD3ABB /* ToDoListTableViewCell.m */,
+				69B86BB71FE1F47300FD3ABB /* ItemsCatTableViewController.h */,
+				69B86BB81FE1F47300FD3ABB /* ItemsCatTableViewController.m */,
+				69B86BBA1FE1F48900FD3ABB /* ItemsCatTableViewCell.h */,
+				69B86BBB1FE1F48900FD3ABB /* ItemsCatTableViewCell.m */,
 			);
 			path = SuperMarketApp;
 			sourceTree = "<group>";
@@ -160,13 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B86BA01FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld in Sources */,
-				69B86B9A1FE1DDD400FD3ABB /* ViewController.m in Sources */,
 				69B86BA81FE1DDD500FD3ABB /* main.m in Sources */,
 				69B86BB61FE1E48F00FD3ABB /* ToDoListTableViewCell.m in Sources */,
+				69B86BB91FE1F47300FD3ABB /* ItemsCatTableViewController.m in Sources */,
 				69B86BB31FE1E44300FD3ABB /* TodoListTableViewController.m in Sources */,
 				69B86BB01FE1E1E200FD3ABB /* AddNewItemViewController.m in Sources */,
 				69B86B971FE1DDD400FD3ABB /* AppDelegate.m in Sources */,
+				69B86BBC1FE1F48900FD3ABB /* ItemsCatTableViewCell.m in Sources */,
+				69B86BBF1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,12 +352,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		69B86B9E1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodeld */ = {
+		69B86BBD1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				69B86B9F1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodel */,
+				69B86BBE1FE2082300FD3ABB /* SuperMarketApp.xcdatamodel */,
 			);
-			currentVersion = 69B86B9F1FE1DDD400FD3ABB /* SuperMarketApp.xcdatamodel */;
+			currentVersion = 69B86BBE1FE2082300FD3ABB /* SuperMarketApp.xcdatamodel */;
 			path = SuperMarketApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

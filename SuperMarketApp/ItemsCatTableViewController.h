@@ -1,5 +1,5 @@
 //
-//  AddNewItemViewController.h
+//  ItemsCatTableViewController.h
 //  SuperMarketApp
 //
 //  Created by Andres Gonzalez on 12/13/17.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface AddNewItemViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface ItemsCatTableViewController : UITableViewController
 {
     AppDelegate* appDelegate;
     NSManagedObjectContext* context;
-    
+
 }
-@property (nonatomic, strong) NSArray *itemsCategories;
+@property (nonatomic, strong) NSString *category;
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface TodoListTableViewController : UITableViewController
-
+{
+    AppDelegate* appDelegate;
+    NSManagedObjectContext* context;
+}
 @end

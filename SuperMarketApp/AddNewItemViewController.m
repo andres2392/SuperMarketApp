@@ -60,12 +60,9 @@
     NSInteger row = [self.pickerCat selectedRowInComponent:0];
     //fetch data
     NSString *selected = self.itemsCategories[row];
-    [item setValue:selected forKey:@"category"];
-    
-    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
-    // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
-    [item setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:@"date"];
+    BOOL myBool = NO;
+    NSNumber *boolAsNumber = [NSNumber numberWithBool:myBool];
+    [item setValue:boolAsNumber forKey:@"done"];
     
     // zero out the ui fields
     self.eTxtName.text = @"";

@@ -73,13 +73,12 @@
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     [request setEntity:entityDesc];
     
+    NSString *notDone = @"NO";
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(category = %@)", self.category];
-    NSLog(@"PREDICATE %@", pred);
-    [request setPredicate:pred];
+    NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"(done = %@)", notDone];
     
-    //NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Items"];
-    
-    NSLog(@"PREDICATE %@", request);
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[pred, predicate1]];
+    [request setPredicate:predicate];
     
     NSError *error = nil;
     NSArray *objects = [context executeFetchRequest:request error:&error];
@@ -89,10 +88,42 @@
         
     }else {
         self.myItemsDisp = objects;
-        NSLog(@"COUNT %lu ",[self.myItemsDisp count] );
+        //NSLog(@"COUNT %lu ",[self.myItemsDisp count] );
         NSLog(@"ITEMS FOUND %@", self.myItemsDisp);
         
         self.find = YES;
     }
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //remove the deleted object from your data source.
+        //If your data source is an NSMutableArray, do this
+        
+        NSString *doneItem = [self.myItemsDisp objectAtIndex:indexPath.row];
+        
+        [self passItem:doneItem];
+        [self viewDidLoad];
+        //[self.myCars removeObjectAtIndex:indexPath.row];
+        
+        [tableView reloadData]; // tell table to refresh now
+    }
+}
+
+-(void)passItem: (Items*) item {
+    
+    Items *item6 = [[Items alloc]initWithContext:context];
+    [item6 setValue: [item valueForKey:@"category"] forKey:@"category"];
+    [item6 setValue:[item valueForKey:@"quantity"] forKey:@"quantity"];
+    [item6 setValue:[item valueForKey:@"name"] forKey:@"name"];
+    [item6 setValue:@"YES" forKey:@"done"];
+    [item6 setValue:[item valueForKey:@"date"] forKey:@"date"];
+    
+    NSError *error = nil;
+    [context deleteObject:item];
+    [context save:&error];
+    
+    NSLog(@"Object deleted");
+}
+
 @end

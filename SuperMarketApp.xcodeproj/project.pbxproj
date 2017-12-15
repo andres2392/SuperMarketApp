@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		698EB6A61FE42FCE00098A7E /* DateListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698EB6A51FE42FCE00098A7E /* DateListTableViewController.m */; };
+		698EB6A91FE4303B00098A7E /* DateListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 698EB6A81FE4303B00098A7E /* DateListTableViewCell.m */; };
+		698EB6AF1FE4444300098A7E /* DoneItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 698EB6AE1FE4444300098A7E /* DoneItemsTableViewCell.m */; };
+		698EB6B21FE4445F00098A7E /* DoneItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698EB6B11FE4445F00098A7E /* DoneItemsTableViewController.m */; };
 		69B86B971FE1DDD400FD3ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B86B961FE1DDD400FD3ABB /* AppDelegate.m */; };
 		69B86B9D1FE1DDD400FD3ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B86B9B1FE1DDD400FD3ABB /* Main.storyboard */; };
 		69B86BA21FE1DDD400FD3ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */; };
@@ -21,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		698EB6A41FE42FCE00098A7E /* DateListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateListTableViewController.h; sourceTree = "<group>"; };
+		698EB6A51FE42FCE00098A7E /* DateListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateListTableViewController.m; sourceTree = "<group>"; };
+		698EB6A71FE4303B00098A7E /* DateListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateListTableViewCell.h; sourceTree = "<group>"; };
+		698EB6A81FE4303B00098A7E /* DateListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateListTableViewCell.m; sourceTree = "<group>"; };
+		698EB6AD1FE4444300098A7E /* DoneItemsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoneItemsTableViewCell.h; sourceTree = "<group>"; };
+		698EB6AE1FE4444300098A7E /* DoneItemsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneItemsTableViewCell.m; sourceTree = "<group>"; };
+		698EB6B01FE4445F00098A7E /* DoneItemsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoneItemsTableViewController.h; sourceTree = "<group>"; };
+		698EB6B11FE4445F00098A7E /* DoneItemsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneItemsTableViewController.m; sourceTree = "<group>"; };
 		69B86B921FE1DDD400FD3ABB /* SuperMarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperMarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B86B951FE1DDD400FD3ABB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69B86B961FE1DDD400FD3ABB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,12 +88,6 @@
 				69B86B961FE1DDD400FD3ABB /* AppDelegate.m */,
 				69B86BAE1FE1E1E200FD3ABB /* AddNewItemViewController.h */,
 				69B86BAF1FE1E1E200FD3ABB /* AddNewItemViewController.m */,
-				69B86B9B1FE1DDD400FD3ABB /* Main.storyboard */,
-				69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */,
-				69B86BA31FE1DDD400FD3ABB /* LaunchScreen.storyboard */,
-				69B86BA61FE1DDD500FD3ABB /* Info.plist */,
-				69B86BA71FE1DDD500FD3ABB /* main.m */,
-				69B86BBD1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld */,
 				69B86BB11FE1E44300FD3ABB /* TodoListTableViewController.h */,
 				69B86BB21FE1E44300FD3ABB /* TodoListTableViewController.m */,
 				69B86BB41FE1E48F00FD3ABB /* ToDoListTableViewCell.h */,
@@ -90,6 +96,20 @@
 				69B86BB81FE1F47300FD3ABB /* ItemsCatTableViewController.m */,
 				69B86BBA1FE1F48900FD3ABB /* ItemsCatTableViewCell.h */,
 				69B86BBB1FE1F48900FD3ABB /* ItemsCatTableViewCell.m */,
+				698EB6A41FE42FCE00098A7E /* DateListTableViewController.h */,
+				698EB6A51FE42FCE00098A7E /* DateListTableViewController.m */,
+				698EB6A71FE4303B00098A7E /* DateListTableViewCell.h */,
+				698EB6A81FE4303B00098A7E /* DateListTableViewCell.m */,
+				69B86B9B1FE1DDD400FD3ABB /* Main.storyboard */,
+				69B86BA11FE1DDD400FD3ABB /* Assets.xcassets */,
+				69B86BA31FE1DDD400FD3ABB /* LaunchScreen.storyboard */,
+				69B86BA61FE1DDD500FD3ABB /* Info.plist */,
+				69B86BA71FE1DDD500FD3ABB /* main.m */,
+				69B86BBD1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld */,
+				698EB6AD1FE4444300098A7E /* DoneItemsTableViewCell.h */,
+				698EB6AE1FE4444300098A7E /* DoneItemsTableViewCell.m */,
+				698EB6B01FE4445F00098A7E /* DoneItemsTableViewController.h */,
+				698EB6B11FE4445F00098A7E /* DoneItemsTableViewController.m */,
 			);
 			path = SuperMarketApp;
 			sourceTree = "<group>";
@@ -168,11 +188,15 @@
 				69B86BA81FE1DDD500FD3ABB /* main.m in Sources */,
 				69B86BB61FE1E48F00FD3ABB /* ToDoListTableViewCell.m in Sources */,
 				69B86BB91FE1F47300FD3ABB /* ItemsCatTableViewController.m in Sources */,
+				698EB6A61FE42FCE00098A7E /* DateListTableViewController.m in Sources */,
+				698EB6B21FE4445F00098A7E /* DoneItemsTableViewController.m in Sources */,
 				69B86BB31FE1E44300FD3ABB /* TodoListTableViewController.m in Sources */,
 				69B86BB01FE1E1E200FD3ABB /* AddNewItemViewController.m in Sources */,
 				69B86B971FE1DDD400FD3ABB /* AppDelegate.m in Sources */,
 				69B86BBC1FE1F48900FD3ABB /* ItemsCatTableViewCell.m in Sources */,
 				69B86BBF1FE2082300FD3ABB /* SuperMarketApp.xcdatamodeld in Sources */,
+				698EB6AF1FE4444300098A7E /* DoneItemsTableViewCell.m in Sources */,
+				698EB6A91FE4303B00098A7E /* DateListTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

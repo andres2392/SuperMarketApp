@@ -36,24 +36,67 @@
     AddNewItemViewController *addNewViewController = [[AddNewItemViewController alloc]init];
     addNewViewController.itemsCategories = self.itemsCategories;
     
-    /*
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh"];
+    [refresh addTarget:self action:@selector(refresh)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    
     Items *item1 = [[Items alloc]initWithContext:context];
     [item1 setValue:@"Rice" forKey:@"category"];
     [item1 setValue:@"21" forKey:@"quantity"];
-    [item1 setValue:@"Rice" forKey:@"name"];
-    
+    [item1 setValue:@"PUERCO" forKey:@"name"];
+    [item1 setValue:@"NO" forKey:@"done"];
+    [item1 setValue:@"11/11/2017" forKey:@"date"];
     
     Items *item2 = [[Items alloc]initWithContext:context];
     [item2 setValue:@"Rice" forKey:@"category"];
     [item2 setValue:@"21" forKey:@"quantity"];
     [item2 setValue:@"Perico" forKey:@"name"];
+    [item2 setValue:@"NO" forKey:@"done"];
+    [item2 setValue:@"11/13/2017" forKey:@"date"];
     
     Items *item3 = [[Items alloc]initWithContext:context];
     [item3 setValue:@"Pasta" forKey:@"category"];
     [item3 setValue:@"21" forKey:@"quantity"];
     [item3 setValue:@"pasta" forKey:@"name"];
-    */
+    [item3 setValue:@"NO" forKey:@"done"];
+    [item3 setValue:@"11/11/2017" forKey:@"date"];
     
+    
+    //DONE OBJECTS
+    Items *item4 = [[Items alloc]initWithContext:context];
+    [item4 setValue:@"Drinks" forKey:@"category"];
+    [item4 setValue:@"21" forKey:@"quantity"];
+    [item4 setValue:@"Toyota" forKey:@"name"];
+    [item4 setValue:@"YES" forKey:@"done"];
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    [item4 setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:@"date"];
+    
+    Items *item5 = [[Items alloc]initWithContext:context];
+    [item5 setValue:@"Sauces" forKey:@"category"];
+    [item5 setValue:@"21" forKey:@"quantity"];
+    [item5 setValue:@"Salsa" forKey:@"name"];
+    [item5 setValue:@"YES" forKey:@"done"];
+    [item5 setValue:@"11/14/2016" forKey:@"date"];
+    
+    Items *item6 = [[Items alloc]initWithContext:context];
+    [item6 setValue:@"Sauces" forKey:@"category"];
+    [item6 setValue:@"21" forKey:@"quantity"];
+    [item6 setValue:@"Salsa" forKey:@"name"];
+    [item6 setValue:@"YES" forKey:@"done"];
+    [item6 setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:@"date"];
+    
+    Items *item7 = [[Items alloc]initWithContext:context];
+    [item7 setValue:@"Sauces" forKey:@"category"];
+    [item7 setValue:@"21" forKey:@"quantity"];
+    [item7 setValue:@"Salsa" forKey:@"name"];
+    [item7 setValue:@"YES" forKey:@"done"];
+    [item7 setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:@"date"];
+    
+    
+   // NSLog(@"ITEMS %@ %@ %@ ", item1, item2, item3);
 
 }
 
@@ -85,7 +128,6 @@
     
     cell.txtCount.text = [NSString stringWithFormat:@"(%ld)",categorieSize ];
     
-   
     return cell;
 }
 
@@ -103,7 +145,6 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
         NSString *key = [self.itemsCategories objectAtIndex:myIndexPath.row];
-        NSLog(@"CATEGORY: %@", key);
         // Pass the selected object to the new view controller.
         destinationViewController.category = key;
     }
@@ -114,12 +155,40 @@
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Items" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     [request setEntity:entityDesc];
+    NSString *notDone = @"NO";
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(category = %@)", category];
-    [request setPredicate:pred];
+   NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"(done = %@)", notDone];
+    
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[pred, predicate1]];
+   
+    [request setPredicate:predicate];
+    //NSLog(@"PREDICATE %@", predicate);
+    
     NSError *error = nil;
     NSArray *objects = [context executeFetchRequest:request error:&error];
 
-    return [objects count];
+    if ([objects count]== 0) {
+        return 0;
+    }else{
+        //NSLog(@"ARRAY SIZE %lu", [objects count]);
+        //NSLog(@"ITEMS %@ &@", objects[0], objects[1]);
+        return [objects count];
+    }
+    
+}
+
+- (void)stopRefresh
+
+{
+    [self.refreshControl endRefreshing];
+    
+}
+
+- (void)refresh{
+    
+    [self viewDidLoad];
+    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:2.5];
+    
 }
 
 @end

@@ -68,6 +68,9 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="4yP-SW-iht">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="77g-0X-8ru"/>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ae8-w1-SbZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmX-W9-M8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +108,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="txtName" destination="vxL-VR-oNo" id="jJc-Y5-eWB"/>
-                                    <segue destination="wWh-eA-d2q" kind="show" identifier="showDoneItems" id="pWj-ZU-KKH"/>
+                                    <segue destination="wWh-eA-d2q" kind="show" identifier="showDoneItems" action="showDetailViewController:sender:" id="be3-de-JRa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -189,7 +192,6 @@
                     <toolbarItems>
                         <barButtonItem title="Item" id="eG8-EM-OSg"/>
                     </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBc-00-qSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -458,6 +460,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="6Vt-tU-fyC"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="tBu-Vr-eAU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5DX-GB-1kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

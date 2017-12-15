@@ -27,7 +27,8 @@
     context = appDelegate.persistentContainer.viewContext;
     
     self.itemsCategories = [[NSArray alloc]init];
-    self.itemsCategories = @[ @"Flour",@"Rice",@"Drinks",@"Pasta",@"Sauces"];
+    self.itemsCategories = @[ @"Beverages",@"Bread",@"Dairy",@"Dry",@"Frozen Foods",
+                              @"Meat", @"Produce", @"Cleaners", @"Paper Goods",@"Personal Care", @"Others" , @"Canned", @"Cereal",@"Refrigerated Foods"];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM

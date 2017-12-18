@@ -72,12 +72,15 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([[segue identifier]isEqualToString:@"showDoneItems"]){
+        
         DoneItemsTableViewController  *destinationViewController = [segue destinationViewController];
         // get the selection
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
-        NSString *key = [self.arrayWithoutDuplicates objectAtIndex:myIndexPath.row];
+        NSManagedObjectModel *key = [self.arrayWithoutDuplicates objectAtIndex:myIndexPath.row];
         // Pass the selected object to the new view controller.
+
+        //NSLog(@"DATE KEY %@", [key valueForKey:@"date"]);
         destinationViewController.title =[key valueForKey:@"date"];
         destinationViewController.date = [key valueForKey:@"date"];
     }
@@ -122,6 +125,7 @@
         }
         NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:unique];
         self.arrayWithoutDuplicates = [orderedSet array];
+        NSLog(@"DATES : %@", self.arrayWithoutDuplicates );
     }
 }
 
@@ -138,5 +142,12 @@
     [self viewDidLoad];
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:2.5];
     
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    //NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]  initWithEntityName:@"Items"];
+    //self.itemsCategories = [[context executeFetchRequest:fetchRequest error:nil]mutableCopy];
+    
+    [self.tableView reloadData];
 }
 @end

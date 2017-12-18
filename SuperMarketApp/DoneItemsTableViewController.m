@@ -19,12 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //NSLog(@"DATE DONE: %@", self.date);
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     context = appDelegate.persistentContainer.viewContext;
     
     [self findRecords];
     
 
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                     action:@selector(leftSwipe:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.tableView addGestureRecognizer:recognizer];
+    
+    recognizer.delegate = self;
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self.tableView addGestureRecognizer:recognizer];
     
 }
 
@@ -51,8 +61,8 @@
     
     // populate cells with data
     NSString *key = [self.dateItems objectAtIndex:indexPath.row];
-    cell.txtName.text = [key valueForKey:@"name"];
-    cell.txtQuantity.text = [key valueForKey:@"quantity"];
+    cell.txtName.text = [NSString stringWithFormat:@"Product: %@",[key valueForKey:@"name"]];
+    cell.txtQuantity.text = [NSString stringWithFormat:@"# %@",[key valueForKey:@"quantity"]];
     cell.txtCategory.text = [key valueForKey:@"category"];
     
     return cell;
@@ -77,6 +87,7 @@
     
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[pred, predicate1]];
     [request setPredicate:predicate];
+    NSLog(@"PREDICATE %@", predicate);
     
     NSError *error = nil;
     NSArray *objects = [context executeFetchRequest:request error:&error];
@@ -86,8 +97,8 @@
         
     }else {
         self.dateItems = objects;
-        //NSLog(@"COUNT %lu ",[self.myItemsDisp count] );
-        //NSLog(@"ITEMS FOUND %@", self.dateItems);
+        NSLog(@"COUNT %lu ",[self.dateItems count] );
+        NSLog(@"ITEMS FOUND %@", self.dateItems);
         
     }
 }

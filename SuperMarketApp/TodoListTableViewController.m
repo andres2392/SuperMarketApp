@@ -44,8 +44,6 @@
     self.refreshControl = refresh;
     
    
-    
-   // NSLog(@"ITEMS %@ %@ %@ ", item1, item2, item3);
 
 }
 
@@ -139,6 +137,13 @@
     [self viewDidLoad];
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:2.5];
     
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    //NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]  initWithEntityName:@"Items"];
+    //self.itemsCategories = [[context executeFetchRequest:fetchRequest error:nil]mutableCopy];
+    
+    [self.tableView reloadData];
 }
 
 @end

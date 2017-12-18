@@ -14,6 +14,7 @@
 @property (nonatomic, strong) Items *myItems;
 @property (nonatomic, strong) NSMutableArray *myItemsDisp;
 @property (nonatomic, assign ) BOOL find;
+@property (weak, nonatomic ) IBOutlet UILabel *patternLabel;
 
 @end
 
@@ -29,10 +30,15 @@
     self.find = NO;
     
     [self findRecord];
+
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                     action:@selector(leftSwipe:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.tableView addGestureRecognizer:recognizer];
     
-    if (!self.find) {
-        
-    }
+      recognizer.delegate = self;
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self.tableView addGestureRecognizer:recognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,23 +56,21 @@
     return [self.myItemsDisp count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ItemsCatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"itemsCatCell" forIndexPath:indexPath];
     
     // populate cells with data
     NSString *key = [self.myItemsDisp objectAtIndex:indexPath.row];
     cell.txtName.text = [key valueForKey:@"name"];
-    cell.txtQuantity.text = [key valueForKey:@"quantity"];
+      cell.txtQuantity.text =[key valueForKey:@"quantity"];
+    
     
     return cell;
 }
 
 
+// FIND RECORD
 -(void)findRecord{
-    
-    //**********
-   
     
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Items" inManagedObjectContext:context];
     
@@ -89,25 +93,48 @@
     }else {
         self.myItemsDisp = objects;
         //NSLog(@"COUNT %lu ",[self.myItemsDisp count] );
-        NSLog(@"ITEMS FOUND %@", self.myItemsDisp);
+        //NSLog(@"ITEMS FOUND %@", self.myItemsDisp);
         
         self.find = YES;
     }
 }
 
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *button = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Done" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                    {
+                                        NSString *doneItem = [self.myItemsDisp objectAtIndex:indexPath.row];
+                                        
+                                        [self passItem:doneItem];
+                                        [self viewDidLoad];
+                                        
+                                        [tableView reloadData]; // tell table to refresh now
+                                    }];
+    button.backgroundColor = [UIColor greenColor]; //arbitrary color
+    UITableViewRowAction *button2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                     {
+                                         NSError *error = nil;
+                                         [context deleteObject:[self.myItemsDisp objectAtIndex:indexPath.row]];
+                                         [context save:&error];
+                                         
+                                         NSLog(@"Object deleted");
+                                         [self viewDidLoad];
+                                         
+                                         [tableView reloadData]; // tell table to refresh now
+                                     }];
+    button2.backgroundColor = [UIColor redColor]; //arbitrary color
+    
+    return @[button, button2]; //array with all the buttons you want. 1,2,3, etc...
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //remove the deleted object from your data source.
-        //If your data source is an NSMutableArray, do this
-        
-        NSString *doneItem = [self.myItemsDisp objectAtIndex:indexPath.row];
-        
-        [self passItem:doneItem];
-        [self viewDidLoad];
-        //[self.myCars removeObjectAtIndex:indexPath.row];
-        
-        [tableView reloadData]; // tell table to refresh now
-    }
+    // you need to implement this method too or nothing will work:
+    
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES; //tableview must be editable or nothing will work...
 }
 
 -(void)passItem: (Items*) item {
@@ -126,4 +153,8 @@
     NSLog(@"Object deleted");
 }
 
+- (void)leftSwipe:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    //do you left swipe stuff here.
+}
 @end

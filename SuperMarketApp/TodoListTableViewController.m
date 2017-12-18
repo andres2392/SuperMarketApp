@@ -29,6 +29,7 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     context = appDelegate.persistentContainer.viewContext;
     self.find = NO;
+ 
     
     self.itemsCategories = [[NSArray alloc]init];
     self.itemsCategories = @[ @"Beverages",@"Bread",@"Dairy",@"Dry",@"Frozen Foods",

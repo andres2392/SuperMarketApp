@@ -24,17 +24,11 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     context = appDelegate.persistentContainer.viewContext;
     
+    NSString *dayDate = [NSString stringWithFormat:@"Date %@", self.date];
+    UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:dayDate];
+
     [self findRecords];
     
-
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(leftSwipe:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.tableView addGestureRecognizer:recognizer];
-    
-    recognizer.delegate = self;
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.tableView addGestureRecognizer:recognizer];
     
 }
 
@@ -102,7 +96,9 @@
         
     }
 }
-
+- (IBAction)Back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end

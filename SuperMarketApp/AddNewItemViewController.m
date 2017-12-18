@@ -70,7 +70,7 @@
     //NSLog(@"%@",[dateFormatter stringFromDate:[NSDate date]]);
     [item setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:@"date"];
     
-    NSLog(@"ITEM: %@", item);
+   // NSLog(@"ITEM: %@", item);
     
     // zero out the ui fields
     self.eTxtName.text = @"";

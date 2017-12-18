@@ -31,14 +31,6 @@
     
     [self findRecord];
 
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(leftSwipe:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.tableView addGestureRecognizer:recognizer];
-    
-      recognizer.delegate = self;
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.tableView addGestureRecognizer:recognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,8 +145,5 @@
     NSLog(@"Object deleted");
 }
 
-- (void)leftSwipe:(UISwipeGestureRecognizer *)gestureRecognizer
-{
-    //do you left swipe stuff here.
-}
+
 @end

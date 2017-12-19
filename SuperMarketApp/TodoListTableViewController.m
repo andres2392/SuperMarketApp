@@ -32,8 +32,7 @@
  
     
     self.itemsCategories = [[NSArray alloc]init];
-    self.itemsCategories = @[ @"Beverages",@"Bread",@"Dairy",@"Dry",@"Frozen Foods",
-                              @"Meat", @"Produce", @"Cleaners", @"Paper Goods",@"Personal Care", @"Others" , @"Canned", @"Cereal",@"Refrigerated Foods"];
+    self.itemsCategories = @[ @"Beverages", @"Bread", @"Canned",@"Cereal", @"Cleaners", @"Dairy", @"Dry", @"Frozen Foods", @"Meat", @"Paper Goods",@"Personal Care", @"Produce",@"Refrigerated Foods", @"Others" ];
     
     AddNewItemViewController *addNewViewController = [[AddNewItemViewController alloc]init];
     addNewViewController.itemsCategories = self.itemsCategories;
